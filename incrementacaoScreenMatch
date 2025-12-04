@@ -1,0 +1,72 @@
+<?php
+
+echo "Bem-vindos(as) ao Screen-Match" . "\n";
+/*
+$nomeFilme = $argv[1] ?? "Top Gun - Maverick";
+$anoLancamento = $argv[2] ?? 2020;
+
+$somaDeNotas = 9;
+$somaDeNotas += 6;
+$somaDeNotas += 8;
+$somaDeNotas += 7.5;
+$somaDeNotas += 5;
+*/
+
+$nomeFilme = $argv[1] ?? null;
+
+$anoLancamento = $argv[2] ?? null;
+
+if ($nomeFilme !== null) {
+    echo "Nome do filme: $nomeFilme \n";
+} else {
+    echo "Informe o nome do Filme. \n";
+}
+
+if ($anoLancamento !== null) {
+    echo "Ano de Lançamento: $anoLancamento \n";
+} else {
+    echo "Por favor: informe o ano de Lançamento \n";
+}
+
+if ($nomeFilme === null || $anoLancamento === null) {
+    return;
+}
+
+if (!is_numeric($anoLancamento) || (int)$anoLancamento <= 0) {
+    echo "Por favor: Insira um ano válido (ex: 1995 ou 2025). \n";
+    return;
+}
+
+$ano = (int) $anoLancamento;
+
+if ($ano > 2025) {
+    echo "Esse filme é de $ano. Esse filme é um Lançamento. \n";
+} elseif ($ano > 2023) {
+    echo "Esse filme é de $ano. Esse filme ainda é um lançamento. \n";    
+} else {
+    echo "Esse filme é de $ano. Esse filme não é um lançamento. \n";
+}
+
+echo "Filme: $nomeFilme\n";
+echo "Ano: $ano\n";
+
+/*
+$genero = match ($nomeFilme) {
+    "Top Gun - Maverick" => "Ação",
+    "Thor: Ragnarok" => "Heróis",
+    "Se beber não case" => "Comédia",
+};
+
+echo "O Gênero do filme é $genero";
+*/
+
+/*$notaFilme = $somaDeNotas / 5;
+$planoPrime = true;
+
+$incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
+
+echo "Nome do Filme: " . $nomeFilme . "\n";
+echo "Nota do File: " . $notaFilme . "\n";
+echo "Ano de Lançamento: " . $anoLancamento . "\n";*/
+
+?>
